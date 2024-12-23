@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #220033;
+    color: #fff;
+    position: fixed; /* Fix the header to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .logo-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .auth-links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-links a {
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .auth-links a:hover {
+    background-color: #ccc;
+  }
+  
+  /* Add padding-top to prevent content from being hidden behind the fixed header */
+  body {
+    padding-top: 80px; /* Adjust based on the height of the header */
+  }
+  
