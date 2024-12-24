@@ -1,35 +1,75 @@
-/* General styles for HomePage */
-.homepage-wrapper {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  /* Page title */
-  h1 {
-    text-align: center;
-    color: #240033;
-    font-size: 2.5rem;
-    margin: 20px 0;
-  }
-  
-  /* Button container */
-  .button-container {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .create-post-button {
-    background-color: #240033;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  .create-post-button:hover {
-    background-color: #370050;
-  }
-  
+/* Header Container */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #240033;
+  color: white;
+  border-bottom: 2px solid #370050;
+}
+
+/* Logo Section */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Menu Section */
+.header-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Actions Section */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-button {
+  background-color: #370050;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.auth-button:hover {
+  background-color: #490070;
+}

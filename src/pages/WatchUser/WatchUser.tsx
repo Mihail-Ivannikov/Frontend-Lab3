@@ -25,8 +25,9 @@ const WatchUser: React.FC = () => {
     const fetchUserData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:8000/api/users/${username}`);
-        setUser(response.data);
+        const response = await axios.get(`/api/users/${username}`);
+        console.log('Fetched user data:', response.data);  // Log the fetched data
+        setUser(response.data); // Set the user data (username, full_name, posts)
       } catch (err) {
         console.error('Error fetching user data:', err);
         setError('User not found.');
@@ -44,23 +45,10 @@ const WatchUser: React.FC = () => {
   useEffect(() => {
     const fetchUserPosts = async () => {
       setLoading(true);
-      const authUsername = localStorage.getItem('username');
-      const authPassword = localStorage.getItem('password');
-      const isAuthenticated = Boolean(authUsername && authPassword);
-      const encodedCredentials = isAuthenticated ? btoa(`${authUsername}:${authPassword}`) : null;
-
       try {
-        const response = await axios.get(
-          `http://localhost:8000/api/users/${username}/posts`,
-          {
-            params: { page: currentPage },
-            headers: isAuthenticated
-              ? {
-                  Authorization: `Basic ${encodedCredentials}`,
-                }
-              : undefined,
-          }
-        );
+        const response = await axios.get(`/api/users/${username}/posts`, {
+          params: { page: currentPage },
+        });
 
         const fetchedPosts = response.data.posts || response.data;
 
@@ -90,7 +78,7 @@ const WatchUser: React.FC = () => {
     }
   };
 
-  if (!user && loading) {
+  if (loading) {
     return <div>Loading user information...</div>;
   }
 
@@ -101,14 +89,16 @@ const WatchUser: React.FC = () => {
   return (
     <div className="watch-user-wrapper">
       <Header />
-      {user && (
+      {user ? (
         <div className="user-info">
-          <h1>{user.username}</h1>
-          <p><strong>Full name:</strong> {user.full_name || 'No full name provided'}</p>
-          <p><strong>Total posts:</strong> {user.posts}</p>
+          <h1 style={{ color: 'black' }}>{user.username}</h1> {/* Set text color for testing */}
+          <p style={{ color: 'black' }}><strong>Full name:</strong> {user.full_name || 'No full name provided'}</p>
+          <p style={{ color: 'black' }}><strong>Total posts:</strong> {user.posts}</p>
         </div>
+      ) : (
+        <div>User data not available</div>
       )}
-      <h3>Posts of user:</h3>
+      <h3>User's Posts:</h3>
       <PostsList
         posts={posts}
         loading={loading}
