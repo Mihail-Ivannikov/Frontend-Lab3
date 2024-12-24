@@ -1,0 +1,33 @@
+.user-profile {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .user-posts {
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  

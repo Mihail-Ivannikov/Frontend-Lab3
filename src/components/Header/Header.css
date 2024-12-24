@@ -5,11 +5,11 @@
     padding: 10px 20px;
     background-color: #220033;
     color: #fff;
-    position: fixed; /* Fix the header to the top */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 1000;
   }
   
   .logo-section {
@@ -57,7 +57,31 @@
     background-color: #ccc;
   }
   
-  /* Add padding-top to prevent content from being hidden behind the fixed header */
+  .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-input {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-button {
+    padding: 5px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    color: #ddd;
+  }
+  
   body {
     padding-top: 80px; /* Adjust based on the height of the header */
   }

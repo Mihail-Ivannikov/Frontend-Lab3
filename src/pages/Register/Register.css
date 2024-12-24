@@ -40,7 +40,7 @@ body{
     flex-direction: column;
   }
   
-  input {
+  .register-input {
     padding: 5px;
     margin-top: 5px;
     max-width: 450px;

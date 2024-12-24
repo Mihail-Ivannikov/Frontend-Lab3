@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import './LogIn.css';
 
@@ -7,44 +8,33 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
-    const credentials = {
-      username,
-      password,
-    };
-
     try {
       const response = await fetch('/api/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
       });
 
       if (response.status === 204) {
         // Login successful
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
         alert('Login successful!');
-        // Redirect or take any action on successful login
+        navigate('/');
       } else if (response.status === 401) {
-        // Invalid username or password
         const data = await response.json();
         setError(`Invalid username or password: ${data.detail}`);
-      } else if (response.status === 422) {
-        // Validation errors
-        const data = await response.json();
-        setError(`Validation error: ${data.detail.map((err: any) => err.msg).join(', ')}`);
       } else {
-        // Other errors
         setError('Something went wrong. Please try again.');
       }
     } catch (err) {
-      console.error(err);
       setError('Failed to connect to the server. Please try again later.');
     } finally {
       setIsLoading(false);
@@ -54,7 +44,6 @@ const Login = () => {
   return (
     <div className="login-page-container">
       <Header />
-
       <div className="login-page">
         <div className="login-container">
           <h2>Login</h2>
