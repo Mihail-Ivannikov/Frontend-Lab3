@@ -1,33 +1,59 @@
-.user-profile {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+/* Wrapper to center the content on the screen */
+.watch-user-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    margin: 0;                /* Remove default margins */
+    width: 100vw;             /* Full width of the viewport */
   }
   
-  h1 {
+  /* Main content block */
+  .watch-user-wrapper {
+    max-width: 1000px;         /* Limit the width of the content */
+    width: 100%;              /* Make it responsive */
+    padding: 20px;
+    background: #fff;        /* White background for content block */
+    border-radius: 10px;      /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    box-sizing: border-box;   /* Include padding in the total width */
+  }
+  
+  /* User profile section */
+  .user-profile {
+    padding: 20px;
+  }
+  
+  .user-profile h1 {
     font-size: 2rem;
     margin-bottom: 10px;
+    color: #240033;
+    font-size: 48px;
+    text-align: center;
   }
   
-  h2 {
-    margin-top: 20px;
-    font-size: 1.5rem;
+  .user-profile p {
+    color: #555;
+    margin: 5px 0;
+    text-align: center;
   }
   
-  .user-posts {
-    margin-top: 30px;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+  .watch-user-wrapper h3{
+    color: #333;
+    text-align: center;
+    font-size: 32px;
   }
-  
+
+  /* Error message styling */
   .error {
     color: red;
     text-align: center;
+    font-size: 1.2rem;
   }
   
+  /* Loading text styling */
   .loading {
     text-align: center;
     font-size: 1.5rem;
+    color: #333;
   }
   

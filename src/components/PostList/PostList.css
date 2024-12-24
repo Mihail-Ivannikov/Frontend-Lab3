@@ -1,19 +1,22 @@
 /* Posts list */
 .posts-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
     justify-content: center;
     margin-bottom: 20px;
+    
   }
   
   /* Individual post card */
   .post-card {
+    border-radius: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    width: 500px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -26,6 +29,7 @@
     color: #240033;
     font-size: 1.6rem;
     margin-bottom: 10px;
+    text-align: left;
   }
   
   .post-card p {
@@ -50,7 +54,7 @@
     display: block;
     margin: 1rem auto;
     padding: 0.5rem 1rem;
-    background: #007bff;
+    background: #240033;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -58,6 +62,10 @@
   }
   
   .load-more-button:hover {
-    background: #0056b3;
+    background: #240033;
+  }
+
+  .read-more-link{
+    color:#240033;
   }
   

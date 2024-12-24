@@ -24,14 +24,11 @@ const CreatePost: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // If loading, prevent submitting again
     if (isLoading) return;
 
-    // Reset error and success messages
     setError(null);
     setSuccessMessage(null);
 
-    // Validate content length
     if (content.trim().length === 0) {
       setError('Post content cannot be empty.');
       return;
@@ -42,7 +39,6 @@ const CreatePost: React.FC = () => {
       return;
     }
 
-    // Start the loading state
     setIsLoading(true);
 
     try {
@@ -67,12 +63,12 @@ const CreatePost: React.FC = () => {
 
       if (response.status === 200) {
         setSuccessMessage('Post created successfully!');
-        setContent(''); // Clear the textarea
+        setContent('');
       }
     } catch (err: any) {
       setError('Something went wrong. Please try again.');
     } finally {
-      setIsLoading(false); // Stop loading state once the request is done
+      setIsLoading(false);
     }
   };
 
@@ -80,18 +76,19 @@ const CreatePost: React.FC = () => {
     <div>
       <Header />
       <div className="create-post-container">
-        <h2>Create a New Post</h2>
+        <h2 className="create-post-header">Create a New Post</h2>
         <form onSubmit={handleSubmit} className="create-post-form">
           <textarea
+            className="create-post-textarea"
             placeholder="Write your post here (max 140 characters)"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             maxLength={140}
             required
           />
-          {error && <p className="error">{error}</p>}
-          {successMessage && <p className="success">{successMessage}</p>}
-          <button type="submit" disabled={isLoading}>
+          {error && <p className="create-post-error">{error}</p>}
+          {successMessage && <p className="create-post-success">{successMessage}</p>}
+          <button type="submit" className="create-post-button" disabled={isLoading}>
             {isLoading ? 'Submitting...' : 'Post'}
           </button>
         </form>

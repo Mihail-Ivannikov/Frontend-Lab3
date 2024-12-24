@@ -30,16 +30,12 @@ const SinglePostPage: React.FC = () => {
     const usernameStored = localStorage.getItem('username');
     const passwordStored = localStorage.getItem('password');
     
-    console.log('Stored Username:', usernameStored); // Debugging log
-    console.log('Stored Password:', passwordStored); // Debugging log
-
     if (!usernameStored || !passwordStored) {
-      console.log('User is not logged in'); // Debugging log
       return null;
     }
 
     return {
-      Authorization: `Basic ${btoa(`${usernameStored}:${passwordStored}`)}`
+      Authorization: `Basic ${btoa(`${usernameStored}:${passwordStored}`)}`,
     };
   };
 
@@ -73,30 +69,54 @@ const SinglePostPage: React.FC = () => {
     const authHeaders = getAuthHeaders();
 
     if (!authHeaders) {
-      alert('You must be logged in to like a post');
+      alert('You must be logged in to like/unlike a post');
       navigate('/login');
       return;
     }
 
     try {
-      const response = await axios.post(
-        `/api/users/${username}/posts/${post_id}/like`,
-        {},
-        {
-          headers: authHeaders,
-        }
-      );
+      if (isLiked) {
+        // Unlike action
+        const response = await axios.delete(
+          `/api/users/${username}/posts/${post_id}/like`,
+          {
+            headers: authHeaders,
+          }
+        );
 
-      if (response.status === 200) {
-        // Toggle like status and update the like count
-        setIsLiked((prev) => !prev);
-        setPost((prevPost) => prevPost && {
-          ...prevPost,
-          likes: prevPost.likes + (isLiked ? -1 : 1)
-        });
+        if (response.status === 204) {
+          setIsLiked(false);
+          setPost((prevPost) => prevPost && {
+            ...prevPost,
+            likes: prevPost.likes - 1,
+          });
+        }
+      } else {
+        // Like action
+        const response = await axios.put(
+          `/api/users/${username}/posts/${post_id}/like`,
+          {},
+          {
+            headers: authHeaders,
+          }
+        );
+
+        if (response.status === 201) {
+          setIsLiked(true);
+          setPost((prevPost) => prevPost && {
+            ...prevPost,
+            likes: prevPost.likes + 1,
+          });
+        }
       }
     } catch (err) {
-      setError('Failed to like the post.');
+      if (err.response?.status === 401) {
+        setError('User not logged in');
+      } else if (err.response?.status === 404) {
+        setError('Post not found');
+      } else {
+        setError('Failed to perform the action.');
+      }
     }
   };
 

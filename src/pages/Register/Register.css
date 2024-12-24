@@ -2,19 +2,18 @@
 input {
     all: unset;
   }
-
-body{
+  
+  body {
     background-color: white;
-}
-
-.register-page-contaner{
+  }
+  
+  .register-page-contaner {
     display: flex;
     flex-direction: column;
     position: relative;
-} 
-
-
-.register-page {
+  }
+  
+  .register-page {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -27,7 +26,7 @@ body{
     border-radius: 8px;
     width: fit-content;
     margin: auto;
-    }
+  }
   
   .register-form {
     display: flex;
@@ -46,7 +45,7 @@ body{
     max-width: 450px;
     width: 100%;
     border: 1px solid #ccc;
-    background-color: white;
+    background-color: white; /* Ensure the background is white */
     color: black;
     border-radius: 4px;
   }
@@ -59,7 +58,6 @@ body{
     border-radius: 4px;
     cursor: pointer;
     margin-top: 20px;
-    
   }
   
   button:disabled {

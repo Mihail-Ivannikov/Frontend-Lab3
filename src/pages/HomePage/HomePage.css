@@ -1,75 +1,68 @@
-/* Header Container */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #240033;
-  color: white;
-  border-bottom: 2px solid #370050;
-}
+/* General styles for HomePage */
+.homepage-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;     /* Horizontally center content */
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    margin: auto;
+    width: 100vw;
 
-/* Logo Section */
-.header-logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo-image {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Menu Section */
-.header-menu {
-  display: flex;
-  gap: 20px;
-}
-
-.header-menu a {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-}
-
-.header-menu a:hover {
-  text-decoration: underline;
-}
-
-/* Actions Section */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.search-bar {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.user-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.auth-button {
-  background-color: #370050;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.auth-button:hover {
-  background-color: #490070;
-}
+  }
+  
+  /* Page title */
+  .homepage-title {
+    color: #240033;
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+  
+  /* Button container */
+  .button-container {
+    margin: 20px 0;
+  }
+  
+  .create-post-button {
+    background-color: #240033;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .create-post-button:hover {
+    background-color: #370050;
+  }
+  
+  /* Posts List */
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure each post is centered horizontally */
+    width: 100%;
+  }
+  
+  /* Post Item */
+  .post-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px; /* Limit post width */
+    text-align: left;
+  }
+  
+  .post-item h2 {
+    font-size: 1.5rem;
+    color: #240033;
+  }
+  
+  .post-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  

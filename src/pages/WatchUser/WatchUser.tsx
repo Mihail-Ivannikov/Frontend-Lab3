@@ -87,27 +87,44 @@ const WatchUser: React.FC = () => {
   }
 
   return (
-    <div className="watch-user-wrapper">
-      <Header />
-      {user ? (
-        <div className="user-info">
-          <h1 style={{ color: 'black' }}>{user.username}</h1> {/* Set text color for testing */}
-          <p style={{ color: 'black' }}><strong>Full name:</strong> {user.full_name || 'No full name provided'}</p>
-          <p style={{ color: 'black' }}><strong>Total posts:</strong> {user.posts}</p>
-        </div>
-      ) : (
-        <div>User data not available</div>
-      )}
-      <h3>User's Posts:</h3>
-      <PostsList
-        posts={posts}
-        loading={loading}
-        hasMore={hasMore}
-        onLoadMore={handleLoadMore}
-        error={error}
-      />
+    <div className="watch-user-container">
+      <div className="watch-user-wrapper">
+        <Header />
+        {loading ? (
+          <div className="loading">Loading user information...</div>
+        ) : error ? (
+          <div className="error">{error}</div>
+        ) : (
+          <>
+            {user ? (
+              <div className="user-profile">
+                <h1>{user.username}</h1>
+                <p>
+                  <strong>Full name:</strong> {user.full_name || 'No full name provided'}
+                </p>
+                <p>
+                  <strong>Total posts:</strong> {user.posts}
+                </p>
+              </div>
+            ) : (
+              <div className="error">User data not available</div>
+            )}
+            <h3>User's Posts:</h3>
+            <PostsList
+              posts={posts}
+              loading={loading}
+              hasMore={hasMore}
+              onLoadMore={handleLoadMore}
+              error={error}
+            />
+          </>
+        )}
+      </div>
     </div>
   );
+  
+  
+  
 };
 
 export default WatchUser;

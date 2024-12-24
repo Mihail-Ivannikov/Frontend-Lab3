@@ -40,7 +40,6 @@ const HomePage: React.FC = () => {
           setHasMore(false); // No more posts to fetch
         }
 
-        // Replace posts only if it's the first page, otherwise append new posts
         setPosts((prevPosts) => {
           if (currentPage === 1) {
             return fetchedPosts; // Replace posts for the first page
@@ -67,7 +66,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="homepage-wrapper">
       <Header />
-      <h1>Welcome to the Microblogging Platform</h1>
+      <h1 className="homepage-title">Welcome to the Microblogging Platform</h1>
       <div className="button-container">
         <Link to="/create-post" className="create-post-button">
           Create Post
