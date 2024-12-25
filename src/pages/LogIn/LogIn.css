@@ -24,7 +24,7 @@ input {
   }
   
   .login-container {
-    background-color: #240033;
+    background-color: #3C0B55;
     padding: 20px 50px;
     border-radius: 8px;
     width: fit-content;
@@ -48,11 +48,16 @@ input {
     margin-top: 5px;
     max-width: 450px;
     width: 100%;
-    border: 1px solid #ccc;
     background-color: white; /* Ensure the background is white */
     color: black;
     border-radius: 4px;
   }
+
+  input:focus{
+    background-color: white;
+  }
+
+  
   
   button {
     background-color: #bb87d5;

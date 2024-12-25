@@ -57,3 +57,9 @@
     color: #333;
   }
   
+
+  @media(max-width: 500px){
+    .watch-user-container{
+        margin-top: 150px;
+    }
+  }

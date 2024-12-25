@@ -69,3 +69,9 @@
     color:#240033;
   }
   
+
+  @media(max-width: 500px){
+    .post-card{
+        width: 250px;
+    }
+  }

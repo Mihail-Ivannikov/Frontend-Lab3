@@ -8,23 +8,20 @@ const Header: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  // Simulate checking for logged-in user
   useEffect(() => {
-    const username = localStorage.getItem('username'); // Simulate logged-in user retrieval
+    const username = localStorage.getItem('username'); 
     setLoggedInUser(username);
   }, []);
 
-  // Function to check if a user exists via the API
   const checkUserExists = async (username: string): Promise<boolean> => {
     const response = await fetch(`/api/users/${username}`);
 
     if (response.ok) {
       const data = await response.json();
-      // If the response contains a valid user, return true
       return !!data.username;
     }
 
-    return false; // If response is not OK or user doesn't exist, return false
+    return false; 
   };
 
   const handleSearch = async (e: React.FormEvent) => {
@@ -35,7 +32,7 @@ const Header: React.FC = () => {
       return;
     }
 
-    const searchTerm = searchQuery.trim().toLowerCase(); // Normalize search term
+    const searchTerm = searchQuery.trim().toLowerCase();
 
     try {
       const userExists = await checkUserExists(searchTerm);
@@ -52,44 +49,43 @@ const Header: React.FC = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('username'); // Simulate logout
+    localStorage.removeItem('username'); 
     setLoggedInUser(null);
     setShowDropdown(false);
-    navigate('/login'); // Redirect to login
+    navigate('/login'); 
   };
 
   return (
     <header className="header">
       {/* Block 1: Logo Section */}
+      <div className="menu-search-container">
+
       <div className="logo-section">
         <img src="/public/logo.png" alt="Microblog Logo" className="logo-image" />
         <span className="logo-label">Ping</span>
       </div>
   
-      {/* Block 2: Search Bar */}
-      <div className="search-bar">
-        <form className="search-form" onSubmit={handleSearch}>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input"
-            placeholder="Search user..."
-          />
-          <button type="submit" className="search-button">
-            🔍
-          </button>
-        </form>
+      {/* Block 2: HomePage Button and Search Bar */}
+        <nav className="menu">
+          <a href="/">{"Home Page"}</a>
+        </nav>
+        <div className="search-bar">
+          <form className="search-form" onSubmit={handleSearch}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input"
+              placeholder="Search user..."
+            />
+            <button type="submit" className="search-button">
+              🔍
+            </button>
+          </form>
+        </div>
       </div>
   
-      {/* Block 3: Navigation Menu */}
-      <nav className="menu">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
-  
-      {/* Block 4: Logged-in User and Auth Links */}
+      {/* Block 3: Logged-in User and Auth Links */}
       <div className="user-actions">
         <div className="user-info">
           {loggedInUser ? (
@@ -119,6 +115,7 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
+  
   
 };
 

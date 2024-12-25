@@ -1,13 +1,10 @@
 /* Add this CSS to your styles.css or the component's CSS file */
-input {
-    all: unset;
-  }
-  
+
   body {
     background-color: white;
   }
   
-  .register-page-contaner {
+  .register-page-container {
     display: flex;
     flex-direction: column;
     position: relative;
