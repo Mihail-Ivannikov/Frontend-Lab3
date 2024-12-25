@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Microblogging Platform Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a simple microblogging platform, built using React. The platform allows users to register, authenticate, and interact with posts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Registration**  
+  Users can create an account to access the platform.
 
-## Expanding the ESLint configuration
+- **User Authentication**  
+  Supports Basic authentication for secure login.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Create New Posts**  
+  Authenticated users can publish new posts (limited to 140 characters).
 
-- Configure the top-level `parserOptions` property like this:
+- **View User Profiles**  
+  Users can view the profiles of others through direct links.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Browse Posts**  
+  Users can explore posts created by others.
+
+- **View Specific Posts**  
+  Posts can be accessed individually via direct links.
+
+- **Like Posts**  
+  Users can like posts to show their appreciation.
+
+## Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (Node Package Manager)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mihail-Ivannikov/Frontend-lab3.git
+   cd Frontend-lab3
+### 2. Install Dependencies
+Use npm or yarn to install the required packages:
+
+```bash
+# Using npm
+npm install
+
+# OR using yarn
+yarn install
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Running the Project
+Start the development server:
+   ```bash
+   npm run dev
+   ```
