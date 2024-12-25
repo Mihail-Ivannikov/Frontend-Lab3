@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -5,11 +9,11 @@
     padding: 10px 20px;
     background-color: #220033;
     color: #fff;
-    position: fixed; /* Fix the header to the top */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 1000;
   }
   
   .logo-section {
@@ -27,21 +31,38 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    font-family: "Lobster", serif;
+    font-style: normal;
+      
+  }
+  
+  .menu-search-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px; /* Space between Home Page button and search bar */
   }
   
   .menu {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
   }
   
   .menu a {
     text-decoration: none;
     color: #fff;
-    font-size: 1rem;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: #3F0B55;
+    padding: 5px;
+    vertical-align: middle;
+    margin: 0;
   }
   
   .auth-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
   }
   
@@ -51,14 +72,113 @@
     background-color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
+    margin: 0;
+
   }
   
   .auth-links a:hover {
     background-color: #ccc;
   }
   
-  /* Add padding-top to prevent content from being hidden behind the fixed header */
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    max-height: 45px;
+    padding: 0 5px;
+  }
+  
+  .search-input {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+  
+  .search-button {
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    color: #ddd;
+  }
+  
   body {
     padding-top: 80px; /* Adjust based on the height of the header */
   }
   
+  .user-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px; /* Adjust spacing between elements */
+  }
+  
+  .user-info {
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .user-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 90%;
+    max-width: inherit;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .dropdown-menu .logout-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu .logout-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .logged-in-user {
+    font-weight: bold;
+    color: #fff;
+    border: dotted white 2pt;
+    padding: 10px;
+    text-wrap: nowrap;
+    border-radius: 10px;
+  }
+  
+  .unauthorized {
+    font-weight: bold;
+    color: #fff;
+    border: dotted white 2pt;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+

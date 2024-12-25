@@ -1,0 +1,72 @@
+.single-post-page {
+    padding: 20px;
+    width: 100vw;
+  }
+  
+  .post-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin: auto;
+    
+    background-color: #f9f9f9; /* Optional: Light background for the post card */
+  }
+  
+  .like-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #240033; /* Button background */
+    color: white; /* Text color inside the button */
+  }
+  
+  .like-button:disabled {
+    background-color: #ccc;
+  }
+  
+  .single-post-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #240033; /* Dark color for the main title */
+  }
+  
+  .post-card h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    color: #333; /* Dark gray text color for the post content */
+  }
+  
+  .post-card p {
+    font-size: 1rem;
+    color: #555; /* Lighter gray color for paragraphs */
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #240033; /* Dark purple for links */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #ff6600; /* Orange color when hovering over links */
+  }
+  
+  .create-post-header {
+    color: #240033; /* Heading color for create post section */
+  }
+  
+  .create-post-textarea {
+    color: #333; /* Text color inside the textarea */
+  }
+  
+  .create-post-error {
+    color: red; /* Red color for error messages */
+  }
+  
+  .create-post-success {
+    color: green; /* Green color for success messages */
+  }
+  

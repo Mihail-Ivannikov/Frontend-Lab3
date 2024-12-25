@@ -1,0 +1,87 @@
+/* Ensure the parent container takes full height */
+html, body {
+    margin: 0;    /* Remove default margin */
+  }
+  
+  /* Create Post Container */
+  .create-post-container {
+    position: absolute;  /* Position relative to the page */
+    top: 50%;            /* Center vertically */
+    left: 50%;           /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to perfectly center the container */
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading */
+  .create-post-container .create-post-header {
+    color: #240033;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Textarea */
+  .create-post-form .create-post-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    background-color: white;
+    box-sizing: border-box;
+    color: black;
+    transition: border-color 0.3s ease;
+  }
+  
+  .create-post-form .create-post-textarea:focus {
+    border-color: #240033;
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .create-post-form .create-post-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #240033;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-post-form .create-post-button:hover {
+    background-color: #240033;
+  }
+  
+  .create-post-form .create-post-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Error & Success messages */
+  .create-post-form .create-post-error,
+  .create-post-form .create-post-success {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  .create-post-form .create-post-error {
+    color: red;
+  }
+  
+  .create-post-form .create-post-success {
+    color: green;
+  }
+  
+  

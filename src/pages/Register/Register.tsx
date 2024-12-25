@@ -62,6 +62,7 @@ const Register = () => {
             <label htmlFor="username">Username:</label>
             <input
               type="text"
+              className='register-input'
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -72,6 +73,8 @@ const Register = () => {
             <label htmlFor="password">Password:</label>
             <input
               type="password"
+              className='register-input'
+
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -82,6 +85,8 @@ const Register = () => {
             <label htmlFor="full_name">Full Name:</label>
             <input
               type="text"
+              className='register-input'
+
               id="full_name"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}

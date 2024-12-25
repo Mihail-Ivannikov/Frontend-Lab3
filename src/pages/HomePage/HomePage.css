@@ -1,0 +1,74 @@
+/* General styles for HomePage */
+.homepage-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;     /* Horizontally center content */
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    margin: auto;
+    width: 100vw;
+
+  }
+  
+  /* Page title */
+  .homepage-title {
+    color: #240033;
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+  
+  /* Button container */
+  .button-container {
+    margin: 20px 0;
+  }
+  
+  .create-post-button {
+    background-color: #240033;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .create-post-button:hover {
+    background-color: #370050;
+  }
+  
+  /* Posts List */
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure each post is centered horizontally */
+    width: 100%;
+  }
+  
+  /* Post Item */
+  .post-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px; /* Limit post width */
+    text-align: left;
+  }
+  
+  .post-item h2 {
+    font-size: 1.5rem;
+    color: #240033;
+  }
+  
+  .post-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+
+  @media(max-width: 500px){
+    .homepage-wrapper{
+        margin-top: 150px;
+    }
+  }
